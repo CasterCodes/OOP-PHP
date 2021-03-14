@@ -8,9 +8,9 @@
 <?php
   class Person  {
          /**
-             *class properties
-            *properties are the characteristics of the class - attributes
-            *properties have access modifiers
+            -class properties
+            -properties are the characteristics of the class - attributes
+            -properties have access modifiers
          */
         public string $firstName; // accessed anywhere
         public string $lastName; // accessed anywhere
