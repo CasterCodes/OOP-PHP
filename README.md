@@ -8,9 +8,9 @@
 <?php
   class Person  {
          /**
-            -class properties
-            -properties are the characteristics of the class - attributes
-            -properties have access modifiers
+            - class properties
+            - properties are the characteristics of the class - attributes
+            - properties have access modifiers
          */
         public string $firstName; // accessed anywhere
         public string $lastName; // accessed anywhere
@@ -19,9 +19,9 @@
         public string $sex;
 
          /**
-          *Static properties
-          *they belong to the class and not the instance of the class
-          *can be accessed using the self keyword
+          - Static properties
+          - they belong to the class and not the instance of the class
+          - can be accessed using the self keyword
           */
 
          // static properties
@@ -31,8 +31,8 @@
 
         /*
           constructor - a function that runs when an instance of a class is created
-              == construct is created using the key word __construct
-              ==  it can also have access modifiers
+                      - construct is created using the key word __construct
+                      - it can also have access modifiers
 
         */
          public function __construct ($firstName, $lastName, $age, $weight, $sex) {
@@ -48,10 +48,10 @@
 
          /*
              Methods
-             == methods are just functions defined  inside a class
-             == method can also access modifiers
-             == there custom methods and inbuilt methods commonly known as magic   methods
-             == some magic methods include __set(), __get(), __constructor(), __destructor()
+              - methods are just functions defined  inside a class
+              - methods can also have access modifiers
+              - there are custom methods and inbuilt methods commonly known as magic methods
+              - some magic methods include __set(), __get(), __constructor(), __destructor()
           */
 
 
@@ -63,10 +63,10 @@
 
 
           /**
-           * SETTERS AND GETTERS
-           * With protected and private properties it is a good idea to use setters and getters
-           * We can use magic setters and getters using  the magic methods __set() and __get()
-           * OR building custom setters and getters
+            - SETTERS AND GETTERS
+            - With protected and private properties it is a good idea to use setters and getters
+            - We can use magic setters and getters using  the magic methods __set() and __get()
+            - OR building custom setters and getters
            */
 
             // Custom setters and getters
@@ -87,9 +87,9 @@
 
 
         /**
-         * STATIC METHODS AND PROPERTIES
-         * can be access without creating an instance of a class
-         * defined by using static keyword word
+         - STATIC METHODS AND PROPERTIES
+         - can be access without creating an instance of a class
+         - defined by using static keyword word
          */
          public static function showEyeColor() {
                return self::$eyeColor;
@@ -98,11 +98,11 @@
 
 
         /**
-         * CONSTANTS
-         * Constant can be change once declared
-         * Are declared uing the keyword const
-         * They are case sensitive
-         * Good idea to define them using UPPERCASE
+         - CONSTANTS
+         - Constant cannot be change once declared
+         - Are declared uing the keyword const
+         - They are case sensitive
+         - Good idea to define them using UPPERCASE
          */
         const MESSAGE ='This is how to use a constants in php';
 
@@ -133,7 +133,7 @@ echo '</br>';
 echo $personOne->getAge();  // 24
 $personOne->setAge(34);
 echo '</br>';
-echo $personOne->getAge();
+echo $personOne->getAge(); // 34
 echo '</br>';
 
 // calling a method of a class
@@ -151,7 +151,7 @@ echo Person::showEyeColor();
 echo '<br>';
 
 
-//Acessing
+//Acessing constants
 echo Person::MESSAGE;
 
 
@@ -166,10 +166,10 @@ echo Person::MESSAGE;
 require_once './person.php';
 
 /**
- * A Child class to the person class
- * The student class inherits the properties and methods of the parent class person
- * the can be achieved using the extends keyword
- *
+ - A Child class to the person class
+ - The student class inherits the properties and methods of the parent class person
+ - This can be achieved using the extends keyword
+ 
  */
 
  class Student extends Person {
@@ -178,7 +178,7 @@ require_once './person.php';
        public string  $studentId;
 
 
-       public function __construct($firstName, $lastName, $age, $weight, $sex,$course, $department, $studentId) {
+       public function __construct($firstName, $lastName, $age, $weight, $sex, $course, $department, $studentId) {
                parent::__construct($firstName, $lastName, $age, $weight, $sex);
                $this->course = $course;
                $this->department = $department;
@@ -187,12 +187,12 @@ require_once './person.php';
        }
 
        /**
-        * Trying to access a private property from the parent class
-        * this will throw an error
+        - Trying to access a private property from a child class
+        - this will throw an error
         */
 
        public function getWeight() {
-              return $this->weight;
+              return $this->weight; // Error you cant access a private property
        }
  }
 
@@ -318,11 +318,5 @@ Traits solve this problem
    $cowOne = new Cow();
 
    echo $cowOne->cowSound();
-
-
-
-
-
-
 
 ```
